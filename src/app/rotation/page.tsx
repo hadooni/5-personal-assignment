@@ -5,18 +5,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { List } from "@/types/Champion";
 
-const getChampionRotation = async () => {
-  const res = await fetch("api/rotation");
-  console.log(res);
-  const data = await res.json();
-  return data;
-};
-
 const Rotation = () => {
   const [championData, setChampionData] = useState<List[]>([]);
 
+  const getChampionRotation = async () => {
+    const res = await fetch("/api/rotation");
+    const data = await res.json();
+    console.log(data);
+    setChampionData(data.rotationChampion);
+  };
+
   useEffect(() => {
-    getChampionRotation().then(setChampionData);
+    getChampionRotation();
   }, []);
 
   if (!championData) {

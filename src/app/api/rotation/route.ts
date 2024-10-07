@@ -1,6 +1,5 @@
 import { getChampionList } from "@/app/utils/serverApi";
 import { List } from "@/types/Champion";
-import { ChampionRotation } from "@/types/ChampionRotation";
 import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
@@ -13,12 +12,16 @@ export async function GET(request: Request) {
       },
     }
   );
-  const data: ChampionRotation = await res.json();
+  if (!res.ok) {
+    throw new Error("network error");
+  }
+  const data: string = await res.text();
+  const parsedData = JSON.parse(data);
 
   const response = await getChampionList();
   const arr: List[] = Object.values(response);
 
-  const championId: number[] = data.data.freeChampionIds;
+  const championId: number[] = parsedData.freeChampionIds;
   const rotationChampion = arr.filter((champion) =>
     championId.includes(+champion.key)
   );
