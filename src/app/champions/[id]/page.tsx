@@ -15,8 +15,8 @@ export const generateMetadata = async ({
   };
 };
 
-const listDetail = async ({ params }: Props) => {
+const ListDetail = async ({ params }: Props) => {
   return <ChampionDetail params={params} />;
 };
 
-export default listDetail;
+export default ListDetail;

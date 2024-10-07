@@ -2,7 +2,7 @@ import { Item } from "@/types/Items";
 import { getItemList } from "../utils/serverApi";
 import Image from "next/image";
 
-const items = async () => {
+const Items = async () => {
   const data = await getItemList();
   const arr: Item[] = Object.values(data);
 
@@ -28,4 +28,4 @@ const items = async () => {
   );
 };
 
-export default items;
+export default Items;

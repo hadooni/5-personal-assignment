@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const revalidate = 86400;
 
-const champions = async () => {
+const Champions = async () => {
   const data = await getChampionList();
   const arr: List[] = Object.values(data);
 
@@ -33,4 +33,4 @@ const champions = async () => {
   );
 };
 
-export default champions;
+export default Champions;

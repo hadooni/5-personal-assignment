@@ -15,8 +15,8 @@ export const generateMetadata = async ({
   };
 };
 
-const rotationDetail = async ({ params }: Props) => {
+const RotationDetail = async ({ params }: Props) => {
   return <ChampionDetail params={params} />;
 };
 
-export default rotationDetail;
+export default RotationDetail;
