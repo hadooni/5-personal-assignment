@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .click {
+    @apply text-yellow-500 font-semibold text-center py-4 text-xl;
+  }
+  .title {
+    @apply text-red-400 font-bold text-2xl mb-4;
+  }
+  .card-title {
+    @apply text-red-400 font-bold text-xl;
+  }
+  .card-contents {
+    @apply text-gray-500 font-semibold;
+  }
+  .card-div {
+    @apply border border-slate-100 rounded-md p-4;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
