@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { List } from "@/types/Champion";
+import ChampionCard from "@/components/ChampionCard";
 
 const Rotation = () => {
   const [championData, setChampionData] = useState<List[]>([]);
@@ -27,19 +26,7 @@ const Rotation = () => {
       <h1 className="title">챔피언 로테이션</h1>
       <div className="grid grid-cols-6 gap-4">
         {championData.map((champion) => (
-          <Link key={champion.key} href={`/rotation/${champion.id}`}>
-            <div className="card-div">
-              <Image
-                src={`https://ddragon.leagueoflegends.com/cdn/14.19.1/img/champion/${champion.image.full}`}
-                alt={champion.id}
-                width={100}
-                height={100}
-                className="mx-auto mb-4"
-              />
-              <h2 className="card-title">{champion.name}</h2>
-              <p className="card-contents">{champion.title}</p>
-            </div>
-          </Link>
+          <ChampionCard key={champion.id} champion={champion} />
         ))}
       </div>
     </main>

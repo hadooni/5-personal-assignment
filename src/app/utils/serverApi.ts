@@ -20,7 +20,7 @@ export const getChampionList = async () => {
   const res = await fetch(`${url}/data/ko_KR/champion.json`);
   const { data }: Champion = await res.json();
   if (!res.ok) {
-    return { message: "failed to data fetching" };
+    throw new Error("챔피언 리스트 가져오기를 실패했습니다.");
   }
   return data;
 };
@@ -31,7 +31,7 @@ export const getChampionDetail = async (id: string) => {
   const res = await fetch(`${url}/data/ko_KR/champion/${id}.json`);
   const { data }: ChampionDetail = await res.json();
   if (!res.ok) {
-    return { message: "failed to data fetching" };
+    throw new Error("챔피언 상세정보 가져오기를 실패했습니다.");
   }
   return data;
 };
@@ -42,7 +42,7 @@ export const getItemList = async () => {
   const res = await fetch(`${url}/data/ko_KR/item.json`);
   const { data }: Items = await res.json();
   if (!res.ok) {
-    return { message: "failed to data fetching" };
+    throw new Error("아이템 리스트 가져오기를 실패했습니다.");
   }
   return data;
 };

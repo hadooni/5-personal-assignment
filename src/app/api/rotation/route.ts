@@ -2,13 +2,19 @@ import { getChampionList } from "@/app/utils/serverApi";
 import { List } from "@/types/Champion";
 import { NextResponse } from "next/server";
 
+const RIOT_API_KEY = process.env.RIOT_API_KEY;
+
 export async function GET(request: Request) {
+  if (!RIOT_API_KEY) {
+    throw new Error("API KEY 가 없습니다.!");
+  }
+
   const res = await fetch(
     "https://kr.api.riotgames.com/lol/platform/v3/champion-rotations",
     {
       headers: {
         "Content-Type": "application/json",
-        "X-Riot-Token": process.env.RIOT_API_KEY!,
+        "X-Riot-Token": RIOT_API_KEY,
       },
     }
   );
