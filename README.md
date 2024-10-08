@@ -94,19 +94,20 @@ https://5-personal-assignment.vercel.app/
 ### 1. Home 페이지
 ![image](https://github.com/user-attachments/assets/33f17ac2-5b36-4d64-934a-a0c35947071d)
 - 앱 소개 및 챔피언 목록, 아이템 목록, 로테이션 정보 페이지로 이동할 수 있는 링크를 제공하고 네비게이션 메뉴로도 이동할 수 있습니다.
+<br/>
 
 ### 2. 챔피언 목록 페이지
 ![jpg](https://github.com/user-attachments/assets/831baf12-78d1-4edb-a840-f61b062825cb)
 - 모든 롤 챔피언의 목록을 확인할 수 있으며 각 챔피언 클릭 시 챔피언의 정보, 스탯 등을 조회할 수 있습니다.
+<br/>
 
 ### 3. 아이템 목록 페이지
 ![image](https://github.com/user-attachments/assets/8d08de6e-e9d8-4018-87bc-7f37ad6e5d35)
-
 - 모든 아이템의 목록을 확인할 수 있습니다.
+<br/>
 
 ### 4. 챔피언 로테이션 페이지
 ![image](https://github.com/user-attachments/assets/b131cecd-e24d-4931-99b6-87084bb07046)
-
 - 현재 무료로 플레이 가능한 챔피언 목록을 확인할 수 있으며 클릭 시 각 챔피언의 정보, 스탯 등을 조회할 수 있습니다.
 
 <br />
